@@ -13,19 +13,19 @@
 + (void)sortArray:(NSMutableArray *)array usingSorting:(TOTSortingType)sortingType
 {
     switch (sortingType) {
-        case TOTBubbleSort:
+        case BubbleSort:
             [self bubbleSort:array];
             break;
-        case TOTMergeSort:
+        case MergeSort:
             [self mergeSort:array];
             break;
-        case TOTQuickSort:
+        case QuickSort:
             [self quickSort:array];
             break;
-        case TOTHeapSort:
+        case HeapSort:
             [self heapSort:array];
             break;
-        case TOTInsertionSort:
+        case InsertionSort:
             [self insertionSort:array];
             break;
         default:
@@ -35,7 +35,13 @@
 
 + (void)bubbleSort:(NSMutableArray *)array
 {
-    
+    for (int i = 0; i < array.count - 1; ++i) {
+        for (int j = 0; j < (array.count - 1) - i; j++) {
+            if (array[j] > array[j + 1]) {
+                [array exchangeObjectAtIndex:j withObjectAtIndex:(j + 1)];
+            }
+        }
+    }
 }
 
 + (void)mergeSort:(NSMutableArray *)array

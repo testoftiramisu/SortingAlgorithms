@@ -11,11 +11,11 @@
 @interface TOTSorting : NSObject
 
 typedef enum {
-    TOTBubbleSort,
-    TOTMergeSort,
-    TOTQuickSort,
-    TOTHeapSort,
-    TOTInsertionSort
+    BubbleSort,
+    MergeSort,
+    QuickSort,
+    HeapSort,
+    InsertionSort
 } TOTSortingType;
 
 + (void)sortArray:(NSMutableArray *)array usingSorting:(TOTSortingType)sortingType;
